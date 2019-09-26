@@ -1,8 +1,14 @@
-frase = input("Digite a frase a ser criptografada: ")
-fator = input("Entre com o fator: ")
-nova_frase = ''
+from utils import *
 
-for letter in frase:
-    letter = chr(ord(letter)+1)   
-    nova_frase = nova_frase + letter
-print(nova_frase)
+opt = input("Entre com a opção:\n[1] Criptografar\n[2] Descriptografar\n")
+
+if opt == '1':
+    frase = input("Digite a frase a ser criptografada: ")
+    k = int(input("Entre com o fator k: "))
+    print(encode(frase, k))
+
+elif opt == '2':
+    frase = input("Digite a frase a ser descriptografada: ")
+    k = int(input("Entre com o fator k: "))
+    print(decode(frase, k))
+
